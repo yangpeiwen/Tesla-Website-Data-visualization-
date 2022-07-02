@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Tesla in China: How Tesla entered the Chinese electric car market.</title>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container" id="app">
+            <!-- navbar -->
+            <template>
+                <b-navbar centered>
+                    <template #brand>
+                        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                            <img src="img/teslalogo.png">
+                        </b-navbar-item>
+                    </template>
+                    <template #start>
+                        <b-navbar-item href="#A">
+                            Introduction
+                        </b-navbar-item>
+                        <b-navbar-item href="#B">
+                            Tesla's China Entry
+                        </b-navbar-item>
+                        <b-navbar-item href="#C">
+                            Tesla’s Supply and Value Chains
+                        </b-navbar-item>
+                        <b-navbar-item href="#D">
+                            The Unique Strategy
+                        </b-navbar-item>
+                        <b-navbar-item href="#E">
+                            Successful Marketing
+                        </b-navbar-item>
+                    </template>
+                </b-navbar>
+            </template>
+            <hr>
+
+            <!-- title -->
+            <template>
+                <div class="content" id="title">
+                    <h1>Tesla in China: How Tesla entered the Chinese electric car market.</h1>
+                </div>
+            </template>
+            <hr>
+
+            <!-- slides -->
+            <template>
+                <b-carousel :indicator-inside="false">
+                    <b-carousel-item v-for="(item, i) in items" :key="i">
+                        <b-image class="image" :src="item.image"></b-image>
+                    </b-carousel-item>
+                </b-carousel>
+            </template>
+            <hr>
+
+            <!-- introduction -->
+            <section>
+                <div class="content">
+                    <a name="A"></a>
+                    <h2>
+                        Introduction
+                    </h2>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            <strong>Tesla</strong>'s mission since its inception in 2003 has been to provide mass-market
+                            <strong>electric cars (EVs)</strong>with a compelling customer value proposition. This
+                            comprises a long-range car with recharging flexibility, as well as an energy-efficient,
+                            low-cost, and high-performing vehicle that does not sacrifice design or functionality. This
+                            webpage explains Tesla's one-of-a-kind marketing strategy in China.
+                            <br>
+                            <br>
+                            The design, production, and sale of fully electric vehicles are all part of Tesla's
+                            automotive business. Tesla's <strong>Model S, Model X, and Model Y</strong> premium sedans
+                            and SUVs target the premium car and SUV segments, while the <strong>Model 3 targets the
+                                mainstream vehicle market</strong>. Design, production, and sale of solar energy
+                            generation systems and energy storage solutions to industrial and commercial customers make
+                            up the energy generation and storage category. The company benefits from key expertise in
+                            powertrain engineering, vehicle engineering, innovative manufacturing, and energy storage,
+                            among other things.
+                        </div>
+                    </article>
+                    <br>
+
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            <h4>
+                                Tesla's worldwide domination
+                            </h4>
+                            Tesla has been leading the charge towards alternative energy in the passenger vehicle sector
+                            since going public in 2010. Tesla is currently regarded as a forward-thinking, exciting, and
+                            dominant player in the global vehicle business. Tesla's market worth hit <strong>$774
+                                billion in 2021</strong>, making it the seventh most valuable firm in the United States.
+                            <br>
+                            <br>
+                            Tesla's vehicle deliveries worldwide hit over <strong>500,000 units in 2020, up 36% from
+                                2019</strong>. Tesla's Model 3 is now the <strong>best-selling</strong> plug-in electric
+                            vehicle in the world. Model 3 car deliveries accounted for <strong>over 80%</strong> of
+                            total sales volume in the fourth quarter of 2019, duplicating the Model S and Model X
+                            products, which were originally geared at clients in the high-end sector of the market. With
+                            the Model 3, Tesla is now targeting a larger range of customers.
+                            <br>
+                            <br>
+                            As we can see from the data below, Tesla has unquestionably dominated the electric vehicle
+                            industry, selling about <strong>140,000</strong> more vehicles than BYD, which came in
+                            second. This not only demonstrates Tesla's dominance in the electric vehicle market, but
+                            also the growing <strong>acceptability</strong> of electric vehicles by the general public.
+                            <!--这里插入第一的点图：The Globle market share of EV cars in 2019-->
+                            <!-- here need to be placed as D3chart. -->
+                            <!-- <canvas id="myChart" height="280"></canvas> -->
+                            <canvas id="Globle_market_share_Chart"></canvas>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!-- columns(chart and message) -->
+            <hr>
+
+            <!-- Tesla’s China Entry -->
+            <section>
+                <div class="content is-mobile">
+                    <a name="B"></a>
+                    <h2>
+                        Tesla’s China Entry
+                    </h2>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            <h4>
+                                The Support By Chinese Government
+                            </h4>
+                            The Chinese government's efforts to attract an influential international firm, in order to
+                            boost its image of <strong>market openness</strong>, were exemplified by Tesla's arrival
+                            into the country. China expects that Tesla will become an industry leader, promoting the
+                            <strong>localization</strong> of EV design and manufacture inside China's industrial and
+                            supply chain, with the ultimate goal of propelling China's EV industry to new heights.
+                            <br>
+                            <br>
+                            Tesla's decision to invest in China was a watershed moment for the firm. Tesla made history
+                            by becoming the <strong>first foreign automaker to be granted full autonomy</strong> in
+                            China while maintaining 100 percent ownership. Tesla no longer has to worry about
+                            <strong>"forced technology (IP) transfers"</strong> of its patents, thanks to a recent
+                            amendment to China's Foreign Investment Law. Automakers such as Mercedes-Benz, BMW, Ford,
+                            Toyota, and other foreign carmakers have been pursuing this arrangement for years.
+                            <br>
+                            <br>
+                            <h4>
+                                Factors Influencing Chinese People To Buy Electric Vehicles
+                            </h4>
+                            Tesla After completing its <strong>Gigafactory</strong> in Shanghai in late 2019, China grew
+                            greatly in 2020 and beyond as a result of having local production capabilities. This is
+                            advantageous to the business for two reasons. <strong>First</strong>, because Tesla can
+                            avoid import duties on finished automobiles by manufacturing in China, and
+                            <strong>second</strong>, because its locally produced cars are eligible for
+                            <strong>government subsidies</strong>. China has been the ideal location for Tesla because
+                            it is a major supplier of automotive parts to the worldwide industry as well as a hub for
+                            electric mobility and smart grids.
+                            <br>
+                            <br>
+                            From the data we can see apart from the environmental factor which is an inherent attribute
+                            of electric vehicles. <strong>Government subsidies</strong> and the price of energy are the
+                            main factors determining people's purchase of electric vehicles.
+                            <!--这里放第二个图表-->
+                            <canvas id="Reason_buy_Ecar"></canvas>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <hr>
+            <!-- Tesla’s Supply and Value Chains -->
+            <section>
+                <div class="content">
+                    <a name="C"></a>
+                    <h2>
+                        Tesla’s Supply and Value Chains
+                    </h2>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            <h4>
+                                The Core component
+                            </h4>
+                            Tesla's business model differs from that of other traditional automakers in that it controls
+                            the <strong>whole supply chain</strong>, from manufacturing to distribution. The ultimate
+                            goal of this strategy is to reduce manufacturing costs and the cost of goods supplied,
+                            ensuring the company's <strong>long-term viability</strong>. Unlike prior versions, the
+                            Model X and Model 3 are aimed at the mass market for electric automobiles. Tesla's supply
+                            chain management strategy prioritizes long-term growth through production, inventory
+                            management, and distribution.
+                            <br>
+                            <figure class="image">
+                                <img src=img/Model.png class="center">
+                                Source: SAGE Journals, Tesla’s highly integrated business model
+                            </figure>
+
+                            <br>
+                            <h4>
+                                Retail and Distribution
+                            </h4>
+                            Tesla's business model encompasses every facet of retail and distribution. It <strong>owns
+                                all of its dealers and sales facilities</strong>, as well as handling vehicle repair and
+                            maintenance internally.
+                            <br>
+                            <br>
+                            Traditional OEMs, on the other hand, rely on a multi-tiered sales network that includes both
+                            single-brand and multi-brand dealers. Tesla, in defiance of this entrenched structure, chose
+                            to promote its vehicles via the <strong>Internet</strong>. Making use of the so-called
+                            direct sales system. Tesla's direct sales model differs significantly from that of
+                            traditional franchised dealerships. In this way, the corporation not only owns the channel
+                            touch-points and data, but also the customer experience, which might lead to potential
+                            advantages for future product development.
+                            <br>
+                            <br>
+                            <h4>
+                                Sales and Pricing
+                            </h4>
+                            Some Tesla models are cheaper in China due to government subsidies for electric vehicles.
+                            Tesla, for example, lowered the price of a Chinese-made Model 3 by around
+                            <strong>8%</strong> in 2020. The previous price was 271,500 yuan, but it was reduced to
+                            249,900 yuan. <br>
+                            <br>
+                            Most dealers are unsuited to <strong>online-only sales</strong>, but Tesla has done so
+                            successfully. The advantage of set pricing arises as a result of this sales model. This
+                            implies that the vehicle's retail pricing <strong>remains the same</strong> regardless of
+                            where you purchase it within the Tesla network. When you've gotten to the stage where you
+                            can price an EV at a fixed price, you can think about selling it online. This sets Tesla
+                            apart from the competition since other automakers would have to at least get to the stage
+                            where customers believe they are getting value from the brand. This pricing and distribution
+                            approach gives them the look and feel of an Apple product.
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <hr>
+            <!-- The unique strategy -->
+            <section>
+                <div class="content">
+                    <a name="D"></a>
+                    <h2>
+                        The Unique Strategy
+                    </h2>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            <h4>
+                                The Market Strategy
+                            </h4>
+                            Tesla's marketing strategy in China is unconventional. In truth, there isn't a marketing
+                            department at the corporation. Tesla's cutting-edge marketing strategy, according to Elon
+                            Musk, is <strong>"$0 Marketing Budget."</strong>
+                            <br>
+                            <br>
+                            Despite the lack of a budget, there are few aspects that distinguish Tesla's Chinese
+                            marketing strategy. First and foremost, Tesla strives to give the <strong>finest customer
+                                service possible</strong>. The website has all of the information regarding cars, and
+                            the entire car-buying procedure may be completed online. <strong>During COVID-19</strong>,
+                            this is extremely critical.
+                            <br>
+                            <br>
+                            Tesla's Chinese marketing strategy also includes a <strong>referral program</strong>, rather
+                            than paid advertising. People talk about their Tesla purchases and experiences, which
+                            attracts new buyers. Elon Musk's persona is unquestionably crucial to Tesla's Chinese
+                            marketing strategy. He has been one of the leading newsmakers in recent years and is active
+                            on social media.
+                            <br>
+                            <br>
+                            Finally, in China, Tesla places a <strong>premium on transparency</strong>. Consumers' faith
+                            in a brand is increased when company representatives discuss what occurs if an issue arises.
+                            <!--这里放第三个图表-->
+                            <canvas id="Advertising_spending"></canvas>
+                        </div>
+
+                    </article>
+                </div>
+            </section>
+            <hr>
+
+            <!-- Successful Marketing-->
+            <section>
+                <div class="content">
+                    <a name="E"></a>
+                    <h2>
+                        Successful Marketing
+                    </h2>
+                    <article class="message is-dark">
+                        <div class="message-body">
+                            <h4>
+                                Explaining the success
+                            </h4>
+                            Tesla's success was largely dependent on <strong>timing and vision</strong>. In the
+                            mid-2000s, Tesla was one of only a few pure EV car manufacturers in the world, and it was
+                            likely the first to produce a reliable EV drivetrain and battery pack. The company was one
+                            of the first to anticipate that <strong>lithium-ion battery</strong> prices will continue to
+                            fall for many years. Tesla's hard charging nature, driven by CEO Elon Musk, as well as its
+                            distinct branding approach, helped it stand out from the competition and win devoted fans.
+                            Furthermore, Tesla's commercial and operational models are designed to address the major
+                            issues that Chinese EV buyers face.
+                            <!-- Vue-table -->
+                            <template>
+                                <section>
+                                    <b-tabs>
+                                        <b-tab-item label="Table">
+                                            <b-table :data="data" :columns="columns" :selected.sync="selected"
+                                                focusable>
+                                            </b-table>
+                                        </b-tab-item>
+                                        <b-tab-item label="Selected">
+                                            <pre>{{ selected }}</pre>
+                                        </b-tab-item>
+                                    </b-tabs>
+                                    <b-field>
+                                        <b-button label="Clear selected" type="is-danger" icon-left="close"
+                                            :disabled="!selected" @click="selected = null" />
+                                    </b-field>
+                                </section>
+                            </template>
+                            <br>
+                            <br>
+                            <h4>Tesla’s Competitors</h4>
+                            NIO, which went public in September 2018, Warren Buffett-backed BYD, SAIC Motor, a
+                            Volkswagen and GM partner, Geely Automotive Group, BAIC Group, and its subsidiary Beijing
+                            Electric Car Co. are among the electric vehicle manufacturers already operating in China. A
+                            set of electric car start-ups, including Byton and WM Motor Tech, is also on the rise in
+                            China.
+                            <br>
+                            <br>
+                            Despite its dominance in electric vehicle sales in the United States, Tesla is
+                            <strong>trailing</strong> local competitors in China's large and lucrative market. According
+                            to Clean Technica's newest survey of plug-in electric vehicle sales in China, the BAIC
+                            EU-Series was the most popular model between January and August of this year. The electric
+                            sedan outsold two other Chinese models,the Tesla Model 3 fell far behind, In 2020. However,
+                            the market has changed, Model 3 become the <strong>most selling electric sedan in
+                                2020</strong>.
+                            <!--test for chart -->
+                            <div style="text-align:center;">
+                                <svg width="800" height="400">
+                                </svg>
+                            </div>
+                            <canvas id="Chinese_Market_share"></canvas>
+                            <br>
+                            <br>
+                            <h4>Awareness</h4>
+                            The effectiveness of Tesla's brand imaging in garnering popularity among Chinese buyers is
+                            depicted in this graph. The importance of brand awareness will be a primary driver of
+                            Tesla's growth in China, setting the tone for <strong>future success</strong>.
+                            <div id="chartdiv_Awareness_Ear_brands" style="height:100vh;"></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <hr>
+            <!-- footer -->
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p4>
+                        <strong>Team Apex</strong> is the creator of this website. <strong>Vue, Buefy</strong> provided
+                        templates. <strong>Data</strong> Is sourced from the Internet.
+                    </p4>
+                </div>
+            </footer>
+
+            <!-- tooltip -->
+            <div id="New_tooltip">
+                <h3 id="New_title">Lorem Ipsum</h3>
+                <p id="New_subtitle">Dolor sit amet.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="//www.amcharts.com/lib/4/core.js"></script>
+    <script src="//www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+
+
+    <script src="https://unpkg.com/vue@2"></script>
+    <!-- Full bundle -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
+    <!-- Individual components -->
+    <script src="https://unpkg.com/buefy/dist/components/table"></script>
+    <script src="https://unpkg.com/buefy/dist/components/input"></script>
+
+    <!-- Vue scrpit -->
+    <script>
+        //test for data from npoint.io
+        //we use this function to get method to get data from npoint.io
+        function httpGet(theUrl) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", theUrl, false); // false for synchronous request
+            xmlHttp.send(null);
+            return xmlHttp.responseText;
+        }
+
+        // here are datas from npoint.io
+        // which are dates of table
+        var text_Reason_purchasing_Ecar = httpGet("https://api.npoint.io/18b673115282610c3fe1");
+        obj_Reason_purchasing_Ecar = JSON.parse(text_Reason_purchasing_Ecar);
+
+        const Reason_purchasing_Ecar_label = obj_Reason_purchasing_Ecar.label;
+
+        new Vue({
+            el: '#app',
+            data() {
+                const data = [
+                    { 'reason': Reason_purchasing_Ecar_label[0], 'percentage': obj_Reason_purchasing_Ecar.data[0] },
+                    { 'reason': Reason_purchasing_Ecar_label[1], 'percentage': obj_Reason_purchasing_Ecar.data[1] },
+                    { 'reason': Reason_purchasing_Ecar_label[2], 'percentage': obj_Reason_purchasing_Ecar.data[2] },
+                    { 'reason': Reason_purchasing_Ecar_label[3], 'percentage': obj_Reason_purchasing_Ecar.data[3] },
+                    { 'reason': Reason_purchasing_Ecar_label[4], 'percentage': obj_Reason_purchasing_Ecar.data[4] },
+                    { 'reason': Reason_purchasing_Ecar_label[5], 'percentage': obj_Reason_purchasing_Ecar.data[5] },
+                    { 'reason': Reason_purchasing_Ecar_label[6], 'percentage': obj_Reason_purchasing_Ecar.data[6] },
+                ]
+                return {
+                    data,
+                    selected: data[1],
+                    items: [
+                        {
+                            title: 'Slide 1',
+                            image: 'img/ModelS.jpg'
+                        },
+                        {
+                            title: 'Slide 2',
+                            image: 'img/Model3.jpg'
+                        },
+                        {
+                            title: 'Slide 3',
+                            image: 'img/ModelX.jpg'
+                        },
+                        {
+                            title: 'Slide 4',
+                            image: 'img/ModelY.jpg'
+                        }
+                    ],
+
+                    columns: [
+                        {
+                            field: 'reason',
+                            label: 'Reason',
+                            width: '650',
+                            numeric: true
+                        },
+                        {
+                            field: 'percentage',
+                            label: 'Percentage',
+                        }
+
+                    ]
+
+                }
+            }
+        })
+    </script>
+
+    <!-- chart script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- chart1 script -->
+    <script>
+        //to get data：Globle_market_share
+        var text_Globle_market_share = httpGet("https://api.npoint.io/98f5386de42552e76886");
+        obj_Globle_market_share = JSON.parse(text_Globle_market_share);
+        console.log(text_Globle_market_share);
+        //
+
+        //Chart 1 for Globle_market_share
+        const labels = obj_Globle_market_share.Globle_market_share_label
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    data: obj_Globle_market_share.Globle_market_share_data,
+                    backgroundColor: [
+                        '#00008B'
+                    ],
+
+                    borderWidth: 1
+                }
+            ],
+        };
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Brand",
+                            font: {
+                                size: 18
+                            },
+                            padding: 20
+                        }
+                    },
+                    y: {
+                        suggestedMin: 0,
+                        suggestedMax: 1.0,
+                        title: {
+                            display: true,
+                            text: "sales",
+                            font: {
+                                size: 18
+                            },
+                            padding: 20
+                        },
+                        ticks: {
+                            stepSize: 0.2
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'The Globle market share of EV cars in 2019',
+                        font: {
+                            size: 24
+                        },
+                        padding: 20
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+
+        };
+
+        var myChart = new Chart(
+            document.getElementById('Globle_market_share_Chart'),
+            config
+
+        )
+    </script>
+
+    <!-- chart2 script -->
+    <script>
+        //Chart 2 for Reason_buy_Ecar
+        //to get data：Reason_buy_Ecar
+        var text_Reason_buy_Ecar = httpGet("https://api.npoint.io/b1c82dee81d1ec04dd33");
+        obj_Reason_buy_Ecar = JSON.parse(text_Reason_buy_Ecar);
+        console.log(obj_Reason_buy_Ecar);
+        console.log(obj_Reason_buy_Ecar.Reason_people_buying_EVcars_label);
+        console.log(obj_Reason_buy_Ecar.Reason_people_buying_EVcars_data);
+        //
+        const Reason_buy_Ecar_labels = obj_Reason_buy_Ecar.Reason_people_buying_EVcars_label;
+
+
+        const Reason_buy_Ecar_data = {
+            labels: Reason_buy_Ecar_labels,
+            datasets: [
+                {
+                    data: obj_Reason_buy_Ecar.Reason_people_buying_EVcars_data,
+                    backgroundColor: [
+                        '#00008B'
+                    ],
+
+                    borderWidth: 1
+                }
+            ],
+        };
+        const Reason_buy_Ecar_config = {
+            type: 'bar',
+            data: Reason_buy_Ecar_data,
+            options: {
+                indexAxis: 'y',
+                scales: {
+
+                    x: {
+                        ticks: {
+                            min: 0,
+                            max: 100,
+                            callback: function (value) {
+                                return value + "%"
+                            }
+                        },
+
+                        title: {
+                            display: true,
+                            text: "Main Reasons(Percentage)",
+                            font: {
+                                size: 18
+                            },
+                            padding: 20
+                        }
+                    },
+
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Main reasons to choose an electric car over a conventianal car in China',
+                        font: {
+                            size: 24
+                        },
+                        padding: 20
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+
+        };
+
+        var Reason_buy_Ecar_myChart = new Chart(
+            document.getElementById('Reason_buy_Ecar'),
+            Reason_buy_Ecar_config
+
+        )
+    </script>
+
+    <!-- chart3 script -->
+    <script>
+        //Chart 3 for Advertising_spending
+        var text_Advertising_spending = httpGet("https://api.npoint.io/bceda7d8566eca3d8ab7");
+        obj_Advertising_spending = JSON.parse(text_Advertising_spending);
+        console.log(obj_Advertising_spending);
+        console.log(obj_Advertising_spending.Advertising_spending_label);
+        console.log(obj_Advertising_spending.Advertising_spending_data);
+
+        const Advertising_spending_labels = obj_Advertising_spending.Advertising_spending_label;
+        const Advertising_spending_data = {
+            labels: Advertising_spending_labels,
+            datasets: [
+                {
+                    data: obj_Advertising_spending.Advertising_spending_data,
+                    backgroundColor: [
+                        '#00008B'
+                    ],
+
+                    borderWidth: 1
+                }
+            ],
+        };
+        const Advertising_spending_config = {
+            type: 'bar',
+            data: Advertising_spending_data,
+            options: {
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Cost(in billion USD)",
+                            font: {
+                                size: 18
+                            },
+                            padding: 20
+                        }
+                    },
+                    y: {
+                        suggestedMin: 0,
+                        suggestedMax: 1.0,
+                        title: {
+                            display: true,
+                            text: "Brand",
+                            font: {
+                                size: 18
+                            },
+                            padding: 20
+                        },
+                        ticks: {
+                            stepSize: 0.2
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Advertising spending of car companies in 2019',
+                        font: {
+                            size: 24
+                        },
+                        padding: 20
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+
+        };
+
+        var Advertising_spending_myChart = new Chart(
+            document.getElementById('Advertising_spending'),
+            Advertising_spending_config
+
+        )
+    </script>
+
+    <!-- chart4 script -->
+    <script>
+        //Chart for Chinese_Market_share
+        //to get data：Chinese_Market_share
+        var text_Chinese_Market_share = httpGet("https://api.npoint.io/00a6f7ea7093cb63d8eb");
+        obj_Chinese_Market_share = JSON.parse(text_Chinese_Market_share);
+        console.log(obj_Chinese_Market_share);
+        //
+
+        //
+        const Chinese_Market_share_labels = obj_Chinese_Market_share.label
+        const Chinese_Market_share_labels_data = {
+            labels: Chinese_Market_share_labels,
+            datasets: [
+                {
+                    data: obj_Chinese_Market_share.data,
+                    backgroundColor: [
+                        '#00008B'
+                    ],
+
+                    borderWidth: 1
+                }
+            ],
+        };
+        const Chinese_Market_share_labels_config = {
+            type: 'bar',
+            data: Chinese_Market_share_labels_data,
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "model",
+                            font: {
+                                size: 18
+                            },
+                            padding: 20
+                        }
+                    },
+                    y: {
+                        suggestedMin: 0,
+                        suggestedMax: 1.0,
+                        title: {
+                            display: true,
+                            text: "sales",
+                            font: {
+                                size: 18
+                            },
+                            padding: 20
+                        },
+                        ticks: {
+                            stepSize: 0.2
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Chinese electric car sales(2019 by unit)',
+                        font: {
+                            size: 24
+                        },
+                        padding: 20
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+
+        };
+
+        var Chinese_Market_share_myChart = new Chart(
+            document.getElementById('Chinese_Market_share'),
+            Chinese_Market_share_labels_config
+
+        )
+    </script>
+
+    <!-- amchart and D3chart script -->
+    <script>
+        //New Chart Awareness_of_Ear_brands_in_China_2019 made by amcharts
+        //to get data：Awareness_of_Ear_brands_in_China_2019
+        var text_Awareness_Ear_brands = httpGet("https://api.npoint.io/3d6ebf65c6dfe82607cb");
+        obj_Awareness_Ear_brands = JSON.parse(text_Awareness_Ear_brands);
+        console.log(obj_Awareness_Ear_brands);
+        //
+        am4core.useTheme(am4themes_animated);
+
+        var chart = am4core.createFromConfig({
+            "data": obj_Awareness_Ear_brands.data,
+            "xAxes": [{
+                "type": "CategoryAxis",
+                "dataFields": {
+                    "category": "model",
+                },
+                "title": {
+                    "text": "Brand in 2019"
+                },
+
+            }],
+            "yAxes": [{
+                "type": "ValueAxis",
+                "title": {
+                    "text": "Percentage"
+                },
+                "numberFormatter": {
+                    "numberFormat": "#'%'"
+                }
+            }],
+            "series": [{
+                "type": "ColumnSeries",
+                "dataFields": {
+                    "valueY": "Percentage",
+                    "categoryX": "model"
+                },
+                "columns": {
+                    "tooltipText": "Category: {categoryX}\nValue: {valueY}",
+                    "fill": "#00008B"
+                }
+            }]
+        }, "chartdiv_Awareness_Ear_brands", am4charts.XYChart);
+
+
+
+
+        //Do not use D3
+        //Chart 3 D3 for Chinese_electric_car_sales
+        //to get data：Chinese_electric_car_sales
+        var text_Chinese_electric_car_sales = httpGet("https://api.npoint.io/00a6f7ea7093cb63d8eb");
+        obj_Chinese_electric_car_sales = JSON.parse(text_Chinese_electric_car_sales);
+        console.log(obj_Chinese_electric_car_sales);
+        //
+        Ce_label = obj_Chinese_electric_car_sales.label;
+        Ce_data = obj_Chinese_electric_car_sales.data;
+
+        var Ad = [
+            { model: Ce_label[0], sales: Ce_data[0] },
+            { model: Ce_label[1], sales: Ce_data[1] },
+            { model: Ce_label[2], sales: Ce_data[2] },
+            { model: Ce_label[3], sales: Ce_data[3] },
+            { model: Ce_label[4], sales: Ce_data[4] },
+            { model: Ce_label[5], sales: Ce_data[5] },
+            { model: Ce_label[6], sales: Ce_data[6] },
+            { model: Ce_label[7], sales: Ce_data[7] },
+            { model: Ce_label[8], sales: Ce_data[8] },
+            { model: Ce_label[9], sales: Ce_data[9] },
+            { model: Ce_label[10], sales: Ce_data[10] },
+            { model: Ce_label[11], sales: Ce_data[11] },
+
+        ];
+
+
+        var myScale = d3.scaleLinear().domain([10000, 40000, 70000]).range([100, 400, 700]);
+        var myColorScale = d3.scaleLinear().domain([10000, 40000, 70000]).range(["lightblue", "blue", "darkblue"]);
+
+        var svg = d3.select("svg");
+
+        // Code for Force Layout Simulator
+        var simulation = d3.forceSimulation()
+            .force("collide", d3.forceCollide().radius(function (d) { return (d.sales / 1000) + 5; }))
+            // .force("center", d3.forceCenter(400, 240))
+            .force('x', d3.forceX().x(function (d) {
+                return myScale(d.sales);
+            }))
+            .force('y', d3.forceY().strength(0.008).y(function (d) {
+                return 480;
+            }));
+        simulation.nodes(Ad);
+        simulation.on("tick", function () {
+            node.attr("transform", function (d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            });
+        });
+        svg.append("g")
+            .attr("transform", "translate(0," + 350 + ")")
+            .call(d3.axisBottom(myScale));
+
+        var node = svg.selectAll(".node")
+            .data(Ad)
+            .enter().append("g")
+            .attr("class", "node");
+
+        node.append('circle')
+            .attr('r', function (d) {
+                return (d.sales / 1000);
+            })
+            .attr('fill', function (d) {
+                return myColorScale(d.sales);
+            });
+
+        simulation.on("tick", function () {
+            node.attr("transform", function (d) {
+                return "translate(" + d.x + "," + d.y + ")";
+            });
+        });
+
+        var circles = d3.selectAll("circle");
+
+        var tooltip = d3.select("#New_tooltip");
+        var title = d3.select("#New_title");
+        var subtitle = d3.select("#New_subtitle");
+
+        circles
+            .on("mouseover", function (event, d) {
+                tooltip.style("display", "block");
+
+                title.text(d.model);
+                subtitle.text("sales:" + d.sales + " (2019) .");
+            })
+            .on("mouseout", function () {
+                tooltip.style("display", "none");
+            })
+            .on('mousemove', function (event, d) {
+                let coords = d3.pointer(event);
+                tooltip
+                    .style("left", (event.pageX - 250) + "px")
+                    .style("top", (event.pageY - 35) + "px");
+            });
+
+    </script>
+
+</body>
+
+</html>

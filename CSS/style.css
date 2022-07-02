@@ -1,0 +1,41 @@
+.is-active .al img {
+    filter: grayscale(0%);
+}
+
+.al img {
+    filter: grayscale(100%);
+}
+
+.content {
+    margin-bottom: 0 !important;
+}
+
+.b-skeleton {
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#New_tooltip {
+    display: none;
+    position: absolute;
+    border-bottom: 1px dotted #666;
+    background-color: FloralWhite;
+    padding: 5px;
+    text-align: left;
+}
+
+#title {
+    font-size:large ;
+}
+
+p{
+    font-size:larger;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
